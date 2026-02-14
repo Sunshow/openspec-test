@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenSpec — 规范驱动开发</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="navbar" role="navigation" aria-label="主导航">
+  <div class="container">
+    <a href="#" class="navbar-brand" aria-label="OpenSpec 首页">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="12" fill="#4F46E5"/><text x="32" y="44" font-family="system-ui,sans-serif" font-size="32" font-weight="700" fill="#FFF" text-anchor="middle">OS</text></svg>
+      OpenSpec
+    </a>
+    <button class="hamburger" aria-label="切换菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">关于</a></li>
+      <li><a href="#concepts">核心概念</a></li>
+      <li><a href="#workflow">工作流程</a></li>
+      <li><a href="#quickstart">快速上手</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero" id="hero">
+  <div class="hero-content">
+    <span class="hero-badge">Spec-Driven Development</span>
+    <h1>用<span>规范</span>驱动开发</h1>
+    <p>OpenSpec 是一套规范驱动开发（SDD）方法论与工具链，让需求、设计、实现在同一套规范体系下高效流转，告别文档与代码脱节的困境。</p>
+    <div class="hero-buttons">
+      <a href="#quickstart" class="btn btn-primary">快速上手</a>
+      <a href="#about" class="btn btn-outline">了解更多</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== What is OpenSpec ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <h2 class="section-title fade-in">What is OpenSpec?</h2>
+    <p class="section-subtitle fade-in">一种让规范成为开发核心驱动力的方法论</p>
+    <div class="about-content fade-in">
+      <p>OpenSpec 提出了 <strong>SDD（Spec-Driven Development，规范驱动开发）</strong> 方法论。它的核心理念是：以结构化的规范（Spec）作为需求、设计和实现之间的唯一真实来源（Single Source of Truth），让团队在同一套语言下协作。</p>
+      <p>不同于传统的文档驱动或口头沟通，OpenSpec 将每一个行为期望都定义为可追踪、可验证的 Spec 条目，确保从需求提出到代码交付的全链路可追溯。</p>
+      <div class="about-highlight">
+        <strong>核心原则：</strong>规范先行，代码跟随。每一行代码都有对应的 Spec 定义，每一个 Spec 都可以被验证和追踪。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Core Concepts ===== -->
+<section class="concepts" id="concepts">
+  <div class="container">
+    <h2 class="section-title fade-in">核心概念</h2>
+    <p class="section-subtitle fade-in">OpenSpec 围绕五个关键概念构建完整的规范驱动开发体系</p>
+    <div class="concepts-grid">
+
+      <!-- Spec -->
+      <div class="concept-card fade-in">
+        <div class="concept-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+        </div>
+        <h3>Spec（规范）</h3>
+        <p>以 Given/When/Then 格式定义的行为规范，是需求的最小可验证单元，也是整个体系的基石。</p>
+      </div>
+
+      <!-- Change -->
+      <div class="concept-card fade-in">
+        <div class="concept-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="m8 8 4-4 4 4"/><path d="m8 16 4 4 4-4"/></svg>
+        </div>
+        <h3>Change（变更）</h3>
+        <p>一次有意义的功能变更单元，包含提案、规范增量、设计方案和任务清单的完整集合。</p>
+      </div>
+
+      <!-- Proposal -->
+      <div class="concept-card fade-in">
+        <div class="concept-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+        </div>
+        <h3>Proposal（提案）</h3>
+        <p>变更的起点，说明为什么要做、做什么、影响范围，为后续的规范和设计提供上下文。</p>
+      </div>
+
+      <!-- Design -->
+      <div class="concept-card fade-in">
+        <div class="concept-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2"/><path d="M12 21v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="M18.36 18.36l1.42 1.42"/><path d="M1 12h2"/><path d="M21 12h2"/><path d="M4.22 19.78l1.42-1.42"/><path d="M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h3>Design（设计）</h3>
+        <p>技术方案文档，描述如何实现 Spec 中定义的行为，包含架构决策、数据流和文件变更清单。</p>
+      </div>
+
+      <!-- Tasks -->
+      <div class="concept-card fade-in">
+        <div class="concept-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h6"/></svg>
+        </div>
+        <h3>Tasks（任务）</h3>
+        <p>将设计方案拆解为可执行的实施任务清单，每个任务对应具体的代码变更，可逐项跟踪完成状态。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Workflow ===== -->
+<section class="workflow" id="workflow">
+  <div class="container">
+    <h2 class="section-title fade-in">工作流程</h2>
+    <p class="section-subtitle fade-in">从提案到归档，六个步骤完成一次规范驱动的开发迭代</p>
+    <div class="workflow-steps fade-in">
+
+      <div class="workflow-step">
+        <div class="workflow-step-number">1</div>
+        <h4>Proposal</h4>
+        <p>提出变更提案，明确目标与范围</p>
+      </div>
+      <div class="workflow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+
+      <div class="workflow-step">
+        <div class="workflow-step-number">2</div>
+        <h4>Delta Specs</h4>
+        <p>定义新增或变更的行为规范</p>
+      </div>
+      <div class="workflow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+
+      <div class="workflow-step">
+        <div class="workflow-step-number">3</div>
+        <h4>Design</h4>
+        <p>编写技术方案与架构设计</p>
+      </div>
+      <div class="workflow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+
+      <div class="workflow-step">
+        <div class="workflow-step-number">4</div>
+        <h4>Tasks</h4>
+        <p>拆解为可执行的任务清单</p>
+      </div>
+      <div class="workflow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+
+      <div class="workflow-step">
+        <div class="workflow-step-number">5</div>
+        <h4>Implementation</h4>
+        <p>逐项实施任务，编写代码</p>
+      </div>
+      <div class="workflow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+
+      <div class="workflow-step">
+        <div class="workflow-step-number">6</div>
+        <h4>Archive</h4>
+        <p>归档变更，合并到基线规范</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Quickstart ===== -->
+<section class="quickstart" id="quickstart">
+  <div class="container">
+    <h2 class="section-title fade-in">快速上手</h2>
+    <p class="section-subtitle fade-in">只需几步，即可在项目中引入 OpenSpec 规范驱动开发流程</p>
+    <div class="quickstart-grid fade-in">
+
+      <div class="quickstart-block">
+        <h3><span class="icon">1</span> 项目目录结构</h3>
+        <div class="code-block"><span class="comment"># 在项目根目录创建 openspec 结构</span>
+openspec/
+├── specs/
+│   └── <span class="string">baseline.spec.md</span>      <span class="comment"># 基线规范</span>
+└── changes/
+    └── <span class="string">my-feature/</span>            <span class="comment"># 一次变更</span>
+        ├── <span class="keyword">proposal.md</span>        <span class="comment"># 提案</span>
+        ├── specs/
+        │   └── <span class="keyword">delta.spec.md</span>  <span class="comment"># 增量规范</span>
+        ├── <span class="keyword">design.md</span>          <span class="comment"># 技术设计</span>
+        └── <span class="keyword">tasks.md</span>           <span class="comment"># 任务清单</span></div>
+      </div>
+
+      <div class="quickstart-block">
+        <h3><span class="icon">2</span> 编写你的第一个 Spec</h3>
+        <div class="code-block"><span class="comment"># delta.spec.md</span>
+
+<span class="keyword">## ADDED: SPEC-001 — 用户登录</span>
+
+<span class="string">&gt; Given</span> 用户在登录页面
+<span class="string">&gt; When</span>  输入正确的用户名和密码
+<span class="string">&gt; Then</span>  成功跳转到首页
+<span class="string">&gt; And</span>   显示用户头像和昵称</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; 2026 OpenSpec. All rights reserved.</p>
+      <ul class="footer-links">
+        <li>
+          <a href="https://github.com/Sunshow/openspec-test" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/></svg>
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
