@@ -1,0 +1,27 @@
+schema: spec-driven
+
+context: |
+  Project: openspec-test
+  Description: A project managed with OpenSpec Spec-Driven Development (SDD)
+  Status: Initial setup — no application code yet
+  Conventions:
+    - Use Given/When/Then format for all specs
+    - Delta specs must be tagged ADDED/MODIFIED/REMOVED
+    - Specs serve as the single Source of Truth
+
+rules:
+  proposal:
+    - Keep proposals concise and focused
+    - Always include a "Non-goals" section
+    - Clearly state the motivation and impact
+  specs:
+    - Use Given/When/Then format
+    - Tag each spec with ADDED, MODIFIED, or REMOVED
+    - Group specs by module or feature area
+  design:
+    - Include data flow descriptions where applicable
+    - List all files to be created or modified
+  tasks:
+    - Use [ ] checkbox format
+    - Group tasks by module
+    - Order tasks by dependency
